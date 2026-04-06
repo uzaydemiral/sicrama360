@@ -12,10 +12,9 @@ dist
 dist-ssr
 *.local
 
-# Environment variables
+# Environment variables (keep .env.production in repo - only public keys)
 .env
 .env.local
-.env.production
 
 # Reference documents
 docs/
