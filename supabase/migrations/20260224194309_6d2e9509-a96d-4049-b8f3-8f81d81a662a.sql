@@ -1,0 +1,1 @@
+DELETE FROM rate_limit_tracking WHERE endpoint = 'create-paytr-payment';
