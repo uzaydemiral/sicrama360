@@ -330,8 +330,116 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════════════ SECTION 2: BAŞARI KANITLARI (Testimonials) ═══════════════ */}
+      {/* ═══════════════ SECTION 2: ÇÖZÜLECEK PROBLEMLER (Değer) ═══════════════ */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-dark-surface">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-3 md:mb-4">
+            Seni Engelleyen <span className="text-primary">5 Problemi Çözüyoruz</span>
+          </h2>
+          <p className="text-center text-sm md:text-base text-muted-foreground mb-8 md:mb-12">
+            Bu sorunlardan hangisi sana tanıdık geliyor?
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {[
+              {
+                problem: "\"Spor salonuna gidemiyorum\"",
+                solution: "Salon gerekmez! Program tamamen evde veya sahada uygulanabilir şekilde tasarlandı. Vücut ağırlığı + minimal ekipmanla maksimum sonuç.",
+                icon: Dumbbell,
+              },
+              {
+                problem: "\"Dizlerim ağrıyor, korkuyorum\"",
+                solution: "Diz ağrısı çözüm protokolümüzle ağrıları geçir, güvenle antrenmana devam et. Patellar tendon ve ön diz ağrılarına özel yaklaşım.",
+                icon: HeartPulse,
+              },
+              {
+                problem: "\"Hareketleri yanlış yapma korkusu\"",
+                solution: "120+ açıklamalı video kütüphanesi ile her hareketi doğru teknikle öğren. Yanlış yapma korkusunu tamamen bitir.",
+                icon: Video,
+              },
+              {
+                problem: "\"Ne kadar geliştiğimi bilemiyorum\"",
+                solution: "Haftalık sıçrama testi + Athlevo Progress Tracker ile gelişimini cm cinsinden takip et. Motivasyonun hiç düşmesin.",
+                icon: TrendingUp,
+              },
+              {
+                problem: "\"Rastgele antrenman yapıyorum, sistem yok\"",
+                solution: "12 haftalık bilimsel, ilerlemeli ve basketbol odaklı protokol. Her gün ne yapacağını biliyorsun.",
+                icon: Target,
+              },
+              {
+                problem: "\"Yalnız çalışıyorum, destek yok\"",
+                solution: "Topluluk erişimi + süreç boyunca mesajlaşma desteği. Asla yalnız değilsin.",
+                icon: Users,
+              },
+            ].map((item, i) => (
+              <Card key={i} className="p-5 md:p-6 bg-card border-border/50 hover:border-primary/30 transition-all">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="font-display text-sm md:text-base text-destructive">{item.problem}</p>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.solution}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ COACH/FOUNDER (Güvenilirlik - erken göster) ═══════════════ */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-3 md:mb-4">
+              Programı Kim Hazırladı?
+            </h2>
+            <p className="text-center text-sm md:text-base text-muted-foreground mb-8 md:mb-12">
+              Sıçrama360™ sisteminin arkasındaki deneyim
+            </p>
+            <Card className="p-6 md:p-8 lg:p-10 bg-card border-primary/30">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="lg:col-span-1 flex justify-center items-start">
+                  <div className="w-32 h-32 md:w-40 md:h-40 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/30">
+                    <Users className="w-16 h-16 md:w-20 md:h-20 text-primary" />
+                  </div>
+                </div>
+                <div className="lg:col-span-2 space-y-4 md:space-y-6">
+                  <div>
+                    <h3 className="font-display text-xl md:text-2xl lg:text-3xl mb-2 text-primary">Uzay Demiral</h3>
+                    <p className="text-sm md:text-base text-muted-foreground">Performans Koçu & Athlevo Kurucusu</p>
+                  </div>
+                  <div className="space-y-3 md:space-y-4">
+                    {[
+                      { icon: Target, title: "8+ yıllık saha deneyimi", desc: "Altyapı basketbol ve voleybol sporcularıyla yüzlerce başarılı antrenman" },
+                      { icon: Activity, title: "Dikey sıçrama, frenleme, iniş mekaniği ve tendon sağlığı uzmanlığı", desc: "Patlayıcı güç ve mekanik optimizasyon üzerine uygulamalı saha tecrübesi" },
+                      { icon: Shield, title: "Bilimsel protokoller", desc: "Athlevo Performans Sisteminin kurucusu" },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3 md:gap-4">
+                        <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
+                        <div>
+                          <div className="font-semibold text-sm md:text-base text-foreground mb-1">{item.title}</div>
+                          <p className="text-xs md:text-sm text-muted-foreground">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="pt-4 border-t border-border/30">
+                    <p className="text-sm md:text-base text-foreground italic">
+                      "Bu program, Instagram'daki rastgele 'sıçrama antrenmanı' videoları değil; altyapı sporcularıyla yıllardır sahada test ederek oluşturduğum bilimsel bir gelişim sistemidir."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ SECTION 3: BAŞARI KANITLARI (Testimonials) ═══════════════ */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-dark-surface">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-3 md:mb-4">
@@ -409,65 +517,6 @@ const Index = () => {
               <CarouselPrevious className="left-0 md:-left-12" />
               <CarouselNext className="right-0 md:-right-12" />
             </Carousel>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════ SECTION 3: ÇÖZÜLECEK PROBLEMLER (Değer) ═══════════════ */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-dark-surface">
-        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-3 md:mb-4">
-            Seni Engelleyen <span className="text-primary">5 Problemi Çözüyoruz</span>
-          </h2>
-          <p className="text-center text-sm md:text-base text-muted-foreground mb-8 md:mb-12">
-            Bu sorunlardan hangisi sana tanıdık geliyor?
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {[
-              {
-                problem: "\"Spor salonuna gidemiyorum\"",
-                solution: "Salon gerekmez! Program tamamen evde veya sahada uygulanabilir şekilde tasarlandı. Vücut ağırlığı + minimal ekipmanla maksimum sonuç.",
-                icon: Dumbbell,
-              },
-              {
-                problem: "\"Dizlerim ağrıyor, korkuyorum\"",
-                solution: "Diz ağrısı çözüm protokolümüzle ağrıları geçir, güvenle antrenmana devam et. Patellar tendon ve ön diz ağrılarına özel yaklaşım.",
-                icon: HeartPulse,
-              },
-              {
-                problem: "\"Hareketleri yanlış yapma korkusu\"",
-                solution: "120+ açıklamalı video kütüphanesi ile her hareketi doğru teknikle öğren. Yanlış yapma korkusunu tamamen bitir.",
-                icon: Video,
-              },
-              {
-                problem: "\"Ne kadar geliştiğimi bilemiyorum\"",
-                solution: "Haftalık sıçrama testi + Athlevo Progress Tracker ile gelişimini cm cinsinden takip et. Motivasyonun hiç düşmesin.",
-                icon: TrendingUp,
-              },
-              {
-                problem: "\"Rastgele antrenman yapıyorum, sistem yok\"",
-                solution: "12 haftalık bilimsel, ilerlemeli ve basketbol odaklı protokol. Her gün ne yapacağını biliyorsun.",
-                icon: Target,
-              },
-              {
-                problem: "\"Yalnız çalışıyorum, destek yok\"",
-                solution: "Topluluk erişimi + süreç boyunca mesajlaşma desteği. Asla yalnız değilsin.",
-                icon: Users,
-              },
-            ].map((item, i) => (
-              <Card key={i} className="p-5 md:p-6 bg-card border-border/50 hover:border-primary/30 transition-all">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="font-display text-sm md:text-base text-destructive">{item.problem}</p>
-                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.solution}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
@@ -783,89 +832,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════════════ COACH/FOUNDER ═══════════════ */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-3 md:mb-4">
-              Programı Kim Hazırladı?
-            </h2>
-            <p className="text-center text-sm md:text-base text-muted-foreground mb-8 md:mb-12">
-              Sıçrama360™ sisteminin arkasındaki deneyim
-            </p>
-            <Card className="p-6 md:p-8 lg:p-10 bg-card border-primary/30">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                <div className="lg:col-span-1 flex justify-center items-start">
-                  <div className="w-32 h-32 md:w-40 md:h-40 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/30">
-                    <Users className="w-16 h-16 md:w-20 md:h-20 text-primary" />
-                  </div>
-                </div>
-                <div className="lg:col-span-2 space-y-4 md:space-y-6">
-                  <div>
-                    <h3 className="font-display text-xl md:text-2xl lg:text-3xl mb-2 text-primary">Uzay Demiral</h3>
-                    <p className="text-sm md:text-base text-muted-foreground">Performans Koçu & Athlevo Kurucusu</p>
-                  </div>
-                  <div className="space-y-3 md:space-y-4">
-                    {[
-                      { icon: Target, title: "8+ yıllık saha deneyimi", desc: "Altyapı basketbol ve voleybol sporcularıyla yüzlerce başarılı antrenman" },
-                      { icon: Activity, title: "Dikey sıçrama, frenleme, iniş mekaniği ve tendon sağlığı uzmanlığı", desc: "Patlayıcı güç ve mekanik optimizasyon üzerine uygulamalı saha tecrübesi" },
-                      { icon: Shield, title: "Bilimsel protokoller", desc: "Athlevo Performans Sisteminin kurucusu" },
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3 md:gap-4">
-                        <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
-                        <div>
-                          <div className="font-semibold text-sm md:text-base text-foreground mb-1">{item.title}</div>
-                          <p className="text-xs md:text-sm text-muted-foreground">{item.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="pt-4 border-t border-border/30">
-                    <p className="text-sm md:text-base text-foreground italic">
-                      "Bu program, Instagram'daki rastgele 'sıçrama antrenmanı' videoları değil; altyapı sporcularıyla yıllardır sahada test ederek oluşturduğum bilimsel bir gelişim sistemidir."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════ FINAL CTA ═══════════════ */}
-      <section id="final-cta" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-background">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-          <Card className="p-6 md:p-8 lg:p-12 bg-dark-surface border-primary text-center">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-4 md:mb-6">
-              Sıçramanı <span className="text-primary">Artırmaya Hazır mısın?</span>
-            </h2>
-            
-            <div className="bg-primary/10 border border-primary/30 rounded-lg p-4 mb-6">
-              <p className="text-sm sm:text-base text-foreground font-semibold">
-                ⚡ Kontenjan: <span className="text-primary">50 Kişi</span> — Yerini şimdi ayırt!
-              </p>
-            </div>
-            
-            <Button
-              variant="hero"
-              size="xl"
-              onClick={scrollToPricing}
-              className="w-full sm:w-auto mb-4 text-base md:text-lg"
-            >
-              Evet, Hazırım
-            </Button>
-            
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Shield className="w-5 h-5 text-primary flex-shrink-0" />
-              <p className="text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">Sıfır Risk Garantisi:</span>{" "}
-                <span className="text-primary">Gelişim olmazsa seninle ücretsiz çalışıyorum.</span>
-              </p>
-            </div>
-          </Card>
-        </div>
-      </section>
-
       {/* ═══════════════ FAQ ═══════════════ */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-dark-surface">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
@@ -878,7 +844,7 @@ const Index = () => {
               { q: "Ekipman gerekiyor mu?", a: "Minimal ekipman yeterli: Dirençli bant ve tercihen küçük ağırlıklar. Çoğu egzersiz vücut ağırlığı ile yapılabilir. Elit pakette direnç lastiği ve roller kutuyla birlikte geliyor!" },
               { q: "Sıfır Risk Garantisi nasıl işliyor?", a: "Programı uygula, antrenmanları yap. 12 hafta sonunda gelişim olmazsa seni koçluk grubunda tutup hedefine ulaşana kadar ÜCRETSİZ destekliyorum. Haftalık check-in ve ölçüm zorunludur." },
               { q: "Kaç dakika sürüyor?", a: "Antrenmanlar 30-45 dakika arasında sürer. Haftada 6 gün antrenman yapmanız önerilir." },
-              { q: "Paketler arası fark nedir?", a: "Temel Paket (1.250 TL) sadece dijital programı içerir — günde 15 TL'den az! Elit Uçuş Sistemi (2.950 TL) tüm bonuslar + sporcu kutusunu kapınıza kadar getirir. Ultra VIP (8.900 TL) ise bunlara ek olarak 1:1 online görüşme, fizyoterapist ve diyetisyen desteği sunar." },
+              { q: "Paketler arası fark nedir?", a: "Temel Paket (2.450 TL) sadece dijital programı içerir. Elit Paket (3.450 TL) tüm bonuslar + sporcu kutusunu kapınıza kadar getirir — aynı fiyata her şey dahil! VIP Mentörlük (8.900 TL) ise bunlara ek olarak diyetisyen ve fizyoterapist takibi sunar." },
               { q: "Sporcu kutusu ne zaman gelir?", a: "Elit ve VIP paketlerde sporcu kutusu sipariş sonrası 3-5 iş günü içinde kargoya verilir. Kargo tamamen ücretsizdir." },
               { q: "Kontenjan kaç kişi?", a: "Her dönem 50 kişilik kontenjan ile çalışıyorum. Bir sonraki grup Pazartesi başlıyor." },
             ].map((item, i) => (
@@ -893,6 +859,47 @@ const Index = () => {
 
       {/* ═══════════════ SICRAMA HESAPLAYICI ═══════════════ */}
       <JumpCalculator />
+
+      {/* ═══════════════ FINAL CTA ═══════════════ */}
+      <section id="final-cta" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+          <Card className="p-6 md:p-8 lg:p-12 bg-dark-surface border-primary text-center">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-4 md:mb-6">
+              Sıçramanı <span className="text-primary">Artırmaya Hazır mısın?</span>
+            </h2>
+
+            <div className="bg-primary/10 border border-primary/30 rounded-lg p-4 mb-6">
+              <p className="text-sm sm:text-base text-foreground font-semibold">
+                ⚡ Kontenjan: <span className="text-primary">50 Kişi</span> — Yerini şimdi ayırt!
+              </p>
+            </div>
+
+            <Button
+              variant="hero"
+              size="xl"
+              onClick={scrollToPricing}
+              className="w-full sm:w-auto mb-4 text-base md:text-lg"
+            >
+              Evet, Hazırım — Paketi Seçmek İstiyorum
+            </Button>
+
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <Shield className="w-5 h-5 text-primary flex-shrink-0" />
+              <p className="text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">Sıfır Risk Garantisi:</span>{" "}
+                <span className="text-primary">Gelişim olmazsa seninle ücretsiz çalışıyorum.</span>
+              </p>
+            </div>
+
+            <div className="border-t border-border/30 pt-4">
+              <p className="text-xs md:text-sm text-muted-foreground italic">
+                P.S. Unutma — 12 hafta sonunda gelişim olmazsa seninle ücretsiz çalışmaya devam ediyorum.
+                Kaybedecek hiçbir şeyin yok, kazanacağın her şey var. İlk adımı şimdi at.
+              </p>
+            </div>
+          </Card>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="py-12 md:py-16 border-t border-border/30 bg-background">
@@ -925,10 +932,22 @@ const Index = () => {
             </div>
           </div>
           <div className="text-center pt-8 border-t border-border/30">
-            <p className="text-muted-foreground">© 2025 Sıçrama360™. Tüm hakları saklıdır.</p>
+            <p className="text-muted-foreground">© 2026 Sıçrama360™. Tüm hakları saklıdır.</p>
           </div>
         </div>
       </footer>
+
+      {/* Sticky Mobile CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-sm border-t border-border/50 p-3 safe-bottom">
+        <Button
+          variant="hero"
+          size="lg"
+          onClick={scrollToPricing}
+          className="w-full text-base font-bold"
+        >
+          Hemen Başla — 2.450 TL'den
+        </Button>
+      </div>
 
       {/* Payment Modal */}
       <PaymentModal
