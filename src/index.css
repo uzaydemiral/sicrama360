@@ -77,3 +77,50 @@ All colors MUST be HSL.
     font-weight: 700;
   }
 }
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, hsl(16 96% 53%), hsl(25 100% 65%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Safe area for sticky mobile CTA */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
+/* Subtle glow effect on cards */
+.card-glow:hover {
+  box-shadow: 0 0 30px -5px hsl(16 96% 53% / 0.15);
+}
+
+/* Pulse animation for badges */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+.badge-pulse {
+  animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+/* Hide scrollbar for carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Better focus styles */
+*:focus-visible {
+  outline: 2px solid hsl(16 96% 53%);
+  outline-offset: 2px;
+}

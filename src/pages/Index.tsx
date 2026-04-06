@@ -231,11 +231,11 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           {/* Full-width title */}
           <div className="max-w-5xl mx-auto text-center space-y-6 md:space-y-8 mb-10 md:mb-14">
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight">
               Altyapı Basketbolcuları İçin:{" "}
-              <span className="text-primary">12 Haftada Sıçramanı 15cm Artır</span>{" "}
+              <span className="text-gradient">12 Haftada Sıçramanı 15cm Artır</span>{" "}
               ve İlk 5'e Gir –{" "}
-              <span className="text-primary/80">Spor Salonuna Gitmene Gerek Kalmadan.</span>
+              <span className="text-gradient opacity-90">Spor Salonuna Gitmene Gerek Kalmadan.</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium">
               Sakatlık riskini azaltan, evde uygulanabilir, kanıtlanmış sistem.
@@ -692,14 +692,16 @@ const Index = () => {
             {TIERS.map((tier) => (
               <Card
                 key={tier.id}
-                className={`relative flex flex-col p-6 md:p-8 transition-all ${
+                className={`relative flex flex-col p-6 md:p-8 transition-all duration-300 card-glow ${
                   tier.highlight
-                    ? "border-2 border-primary bg-card shadow-[var(--shadow-orange)] scale-[1.02] md:scale-105"
+                    ? "border-2 border-primary bg-card shadow-[var(--shadow-orange)] scale-[1.02] md:scale-105 ring-1 ring-primary/20"
+                    : tier.id === "yem"
+                    ? "border-border/50 bg-card/50 opacity-90 hover:opacity-100 hover:border-primary/30"
                     : "border-border/50 bg-card hover:border-primary/30"
                 }`}
               >
                 {tier.badge && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 text-xs font-bold rounded-full whitespace-nowrap">
+                  <div className={`absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 text-xs font-bold rounded-full whitespace-nowrap ${tier.highlight ? "badge-pulse" : ""}`}>
                     {tier.badge}
                   </div>
                 )}
