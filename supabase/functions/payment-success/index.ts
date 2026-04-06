@@ -6,7 +6,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-const FALLBACK_REDIRECT_ORIGIN = "https://sicramanigelistir.lovable.app";
+const FALLBACK_REDIRECT_ORIGIN = "https://jump.thirteenconcept.com";
 
 function normalizeOrderId(oid: string): string {
   if (oid.includes("-")) return oid;

@@ -2,10 +2,12 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.81.1";
 
 const allowedOrigins = [
+  "https://jump.thirteenconcept.com",
+  "https://jump-boost-90-main-2.vercel.app",
   "https://sicramanigelistir.lovable.app",
   "https://shop.thirteenconcept.com",
-  "https://jump.thirteenconcept.com",
-  "http://localhost:5173"
+  "http://localhost:5173",
+  "http://localhost:8080"
 ];
 
 function getCorsHeaders(origin: string | null) {

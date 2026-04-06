@@ -175,7 +175,7 @@ serve(async (req: Request): Promise<Response> => {
     const supportEmail = "uzaydemiral@thirteenconcept.com";
 
     // Thank-you page link (never expires)
-    const thankYouPageUrl = `https://sicramanigelistir.lovable.app/tesekkurler?oid=${oidWithoutHyphens}&token=${encodeURIComponent(order.access_token)}`;
+    const thankYouPageUrl = `https://jump.thirteenconcept.com/tesekkurler?oid=${oidWithoutHyphens}&token=${encodeURIComponent(order.access_token)}`;
 
     // Also generate direct signed URLs (7 days) for convenience
     const signedUrls: Array<{ name: string; url: string }> = [];
@@ -275,12 +275,11 @@ serve(async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error in resend-order-email:", error);
     
-    const fallbackCors = getCorsHeaders(null);
     return new Response(
       JSON.stringify({ error: "An unexpected error occurred" }),
       {
         status: 500,
-        headers: { ...fallbackCors, "Content-Type": "application/json" },
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
   }
